@@ -1,0 +1,50 @@
+﻿@model FormManagement.Models.User
+@{
+    ViewBag.Title = "Kaydol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section heads{
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p> <b>Kayıt Formu</b></p>
+            <div class="panel panel-login">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!--form-->
+                            @using (Html.BeginForm("Kaydol", "Login", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    @Html.LabelFor(u => u.username)
+                                    @Html.EditorFor(u => u.username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Kullanıcı adını giriniz...", @value = "'" + Model.username + "'", @maxlength = "50", @type = "text" } })
+                                    @Html.ValidationMessageFor(u => u.username, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(u => u.password)
+                                    @Html.EditorFor(u => u.password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifrenizi giriniz...", @maxlength = "50", @type = "password" } })
+                                    @Html.ValidationMessageFor(u => u.password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group mesaj">
+                                    <span class="text-info">@ViewBag.Mesaj</span>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                                    <b>ya da </b>
+                                    <a class="btn btn-link" href="/giris">
+                                        <i class="fa fa-arrow-circle-left"> Giriş sayfasına dön</i>
+                                    </a>
+                                </div>
+                            }
+                            <!--/form-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
