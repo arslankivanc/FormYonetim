@@ -50,6 +50,8 @@ C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\roslyn\VBCSCompiler.exe.co
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\Antlr3.Runtime.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\EntityFramework.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\EntityFramework.SqlServer.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.BL.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.DAL.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\Microsoft.Web.Infrastructure.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\Newtonsoft.Json.dll
@@ -61,6 +63,10 @@ C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\System.Web.WebPages.Deploy
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\System.Web.WebPages.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\System.Web.WebPages.Razor.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\WebGrease.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.BL.pdb
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.BL.dll.config
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.DAL.pdb
+C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\FormManagement.DAL.dll.config
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\EntityFramework.xml
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\EntityFramework.SqlServer.xml
 C:\2020\Asp.net MVC\FormManagement\FormManagement\bin\System.Web.Helpers.xml

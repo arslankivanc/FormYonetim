@@ -1,4 +1,4 @@
-﻿@model FormManagement.ViewModel.FormListesiViewModel
+﻿@model FormManagement.DAL.EntityFramework.Form
 @{
     ViewBag.Title = "Form Listesi";
 }
@@ -17,59 +17,59 @@
             @using (Html.BeginForm("Ekle", "Home", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
             {
                 @Html.AntiForgeryToken()
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            @Html.LabelFor(model => model.form.formName) <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            @Html.EditorFor(model => model.form.formName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Form adını giriniz.", @maxlength = "50", @type = "text" } })
-                            @Html.ValidationMessageFor(model => model.form.formName, "", new { @class = "text-danger" })
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                @Html.LabelFor(model => model.formName) <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                @Html.EditorFor(model => model.formName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Form adını giriniz.", @maxlength = "50", @type = "text" } })
+                                @Html.ValidationMessageFor(model => model.formName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                @Html.LabelFor(model => model.description)
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Form tanımı", @maxlength = "50", @type = "text" } })
+                                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                @Html.LabelFor(model => model.name) <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ad giriniz", @maxlength = "50", @type = "text" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                @Html.LabelFor(model => model.surname) <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                @Html.EditorFor(model => model.surname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Soyad giriniz", @maxlength = "50", @type = "text" } })
+                                @Html.ValidationMessageFor(model => model.surname, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                @Html.LabelFor(model => model.age)
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                @Html.EditorFor(model => model.age, new { htmlAttributes = new { @class = "form-control", @placeholder = "Yaş giriniz...", @type = "number", @min = "0" } })
+                                @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            @Html.LabelFor(model => model.form.description)
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            @Html.EditorFor(model => model.form.description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Form tanımı", @maxlength = "50", @type = "text" } })
-                            @Html.ValidationMessageFor(model => model.form.description, "", new { @class = "text-danger" })
+                    <div class="modal-footer">
+                        <div class="col-md-7">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
+                            <button class="btn btn-success ekle">Ekle</button>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            @Html.LabelFor(model => model.form.name) <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            @Html.EditorFor(model => model.form.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ad giriniz", @maxlength = "50", @type = "text" } })
-                            @Html.ValidationMessageFor(model => model.form.name, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            @Html.LabelFor(model => model.form.surname) <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            @Html.EditorFor(model => model.form.surname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Soyad giriniz", @maxlength = "50", @type = "text" } })
-                            @Html.ValidationMessageFor(model => model.form.surname, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            @Html.LabelFor(model => model.form.age)
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            @Html.EditorFor(model => model.form.age, new { htmlAttributes = new { @class = "form-control", @placeholder = "Yaş giriniz...", @type = "number", @min = "0" } })
-                            @Html.ValidationMessageFor(model => model.form.age, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="col-md-7">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
-                        <button class="btn btn-success ekle">Ekle</button>
-                    </div>
-                </div>
             }
         </div>
     </div>
@@ -79,8 +79,8 @@
     <a class="btn btn-success modalAc" data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-pencil">&nbsp;Yeni Form</i></a>
     <div class="pull-right">
         <i class="fa fa-user"></i>@if (User.Identity.IsAuthenticated)
-        { @User.Identity.Name;
-        }
+        {@User.Identity.Name;
+    }
         &nbsp;
         @if (User.Identity.IsAuthenticated)
         {
@@ -106,7 +106,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var form in Model.forms)
+            @foreach (var form in ViewBag.Forms)
             {
                 <tr>
                     <td>@form.formName</td>

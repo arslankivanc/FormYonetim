@@ -134,31 +134,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Form.cs">
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\formModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\formModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\formModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MetaData.cs" />
-    <Compile Include="Models\User.cs">
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\FormRoleProvider.cs" />
-    <Compile Include="ViewModel\FormListesiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -331,25 +308,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\formModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>formModel.edmx</DependentUpon>
-      <LastGenOutput>formModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\formModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>formModel.edmx</DependentUpon>
-      <LastGenOutput>formModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\formModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>formModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\formModel.edmx.diagram">
-      <DependentUpon>formModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
@@ -445,7 +405,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -480,6 +442,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormManagement.BL\FormManagement.BL.csproj">
+      <Project>{85d39513-dab5-47ae-929c-29e222c6588c}</Project>
+      <Name>FormManagement.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormManagement.DAL\FormManagement.DAL.csproj">
+      <Project>{AAFCCB2A-A02F-4C4B-8732-8BD9B0FA946E}</Project>
+      <Name>FormManagement.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

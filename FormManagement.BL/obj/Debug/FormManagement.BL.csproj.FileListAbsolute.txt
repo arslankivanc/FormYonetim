@@ -1,0 +1,15 @@
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.BL.dll.config
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.BL.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.BL.pdb
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\EntityFramework.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.DAL.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.DAL.pdb
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\FormManagement.DAL.dll.config
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\EntityFramework.xml
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\obj\Debug\FormManagement.BL.csprojAssemblyReference.cache
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\obj\Debug\FormManagement.BL.csproj.CoreCompileInputs.cache
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\obj\Debug\FormManagement.BL.csproj.CopyComplete
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\obj\Debug\FormManagement.BL.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.BL\obj\Debug\FormManagement.BL.pdb
