@@ -13,6 +13,6 @@ namespace FormManagement.BL.RepositoryClass
         User GetFormById(int id);
         User GetUsername(string username);
         User LoginWithPassword(string username, string password);
-        User form();
+        User user();
     }
 }

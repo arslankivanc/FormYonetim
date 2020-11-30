@@ -28,7 +28,7 @@ namespace FormManagement.Controllers
         [Route("giris")]
         public ActionResult Login()
         {
-            return View(_loginRepo.form());
+            return View(_loginRepo.user());
         }
 
         // GET: kayitol
@@ -36,7 +36,7 @@ namespace FormManagement.Controllers
         [Route("kayitol")]
         public ActionResult Kaydol()
         {
-            return View(_loginRepo.form());
+            return View(_loginRepo.user());
         }
 
         //POST:kayitol

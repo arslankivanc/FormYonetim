@@ -27,7 +27,7 @@ namespace FormManagement.BL.RepositoryClass
             return result;
         }
 
-        public User form()
+        public User user()
         {
             return new User();
         }
