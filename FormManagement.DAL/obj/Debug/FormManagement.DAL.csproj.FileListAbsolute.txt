@@ -3,8 +3,12 @@ C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\FormManagement.D
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\FormManagement.DAL.pdb
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\EntityFramework.dll
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\FormManagement.Domain.dll
+C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\FormManagement.Domain.pdb
+C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\FormManagement.Domain.dll.config
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\EntityFramework.xml
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\obj\Debug\FormManagement.DAL.csprojAssemblyReference.cache
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\obj\Debug\FormManagement.DAL.csproj.CoreCompileInputs.cache
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\obj\Debug\FormManagement.DAL.csproj.CopyComplete
 C:\2020\Asp.net MVC\FormManagement\FormManagement.DAL\obj\Debug\FormManagement.DAL.dll

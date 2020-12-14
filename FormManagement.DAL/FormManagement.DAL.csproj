@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AAFCCB2A-A02F-4C4B-8732-8BD9B0FA946E}</ProjectGuid>
+    <ProjectGuid>{C4BBED35-7F54-4D09-8AE9-C50F4003E322}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FormManagement.DAL</RootNamespace>
@@ -43,8 +43,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,58 +51,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFramework\Form.cs">
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\formModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\formModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\formModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>formModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\MetaData.cs" />
-    <Compile Include="EntityFramework\User.cs">
-      <DependentUpon>formModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="IUnitOFWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryClass\Concrete\FormRepository.cs" />
+    <Compile Include="RepositoryClass\Concrete\LoginRepository.cs" />
+    <Compile Include="RepositoryClass\Concrete\Repository.cs" />
+    <Compile Include="RepositoryClass\Interface\IFormRepository.cs" />
+    <Compile Include="RepositoryClass\Interface\ILoginRepository.cs" />
+    <Compile Include="RepositoryClass\Interface\IRepository.cs" />
+    <Compile Include="UnitOFWork.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EntityDeploy Include="EntityFramework\formModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>formModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <ProjectReference Include="..\FormManagement.Domain\FormManagement.Domain.csproj">
+      <Project>{93b71b8c-6a58-42cb-856a-e40ab5fc32dc}</Project>
+      <Name>FormManagement.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="EntityFramework\formModel.edmx.diagram">
-      <DependentUpon>formModel.edmx</DependentUpon>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EntityFramework\formModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>formModel.Context.cs</LastGenOutput>
-      <DependentUpon>formModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="EntityFramework\formModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>formModel.edmx</DependentUpon>
-      <LastGenOutput>formModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

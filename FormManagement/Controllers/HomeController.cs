@@ -3,46 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
-using FormManagement.BL.RepositoryClass;
-using FormManagement.DAL.EntityFramework;
+using FormManagement.DAL;
+using FormManagement.Domain;
 
 namespace FormManagement.Controllers
 {
     [Authorize(Roles = "user")]
     public class HomeController : Controller
     {
-        private IFormRepository _formRepo;
-
-        public HomeController()
-        {
-            _formRepo = new FormRepository(new FormManagementEntities());
-        }
-        public HomeController(IFormRepository formRepository)
-        {
-            _formRepo = formRepository;
-        }
+        UnitOfWork uofwork = new UnitOfWork(new FormManagementEntities());
         [HttpGet]
         [Route("")]
         public ActionResult anasayfa()
         {
-            ViewBag.Forms = _formRepo.GetAllForms();
-            return View("Index",_formRepo.form());
+            ViewBag.Forms = uofwork.FormRepository.GetAll();
+            return View("Index",new Form());
         }
 
         [HttpGet]
         [Route("forms")]
         public ActionResult Index()
         {
-            ViewBag.Forms = _formRepo.GetAllForms();
-            return View(_formRepo.form());
+            ViewBag.Forms = uofwork.FormRepository.GetAll();
+            return View(new Form());
         }
 
         [HttpGet]
         [Route("forms/{id}")]
         public ActionResult Goruntule(int id)
         {
-            var form = _formRepo.GetFormById(id);
+            var form = uofwork.FormRepository.GetById((int)id); ;
             if (form == null)
             {
                 return HttpNotFound();
@@ -60,11 +50,12 @@ namespace FormManagement.Controllers
                 try
                 {
                     string username = User.Identity.Name;
-                    var user = _formRepo.GetUser(username);
+                    var user = uofwork.LoginRepository.GetUser(username);
 
                     form.createdAt = DateTime.Now;
                     form.createdBy = user.Id;
-                    _formRepo.Add(form);
+                    uofwork.FormRepository.Add(form);
+                    uofwork.CompleteSave();
                     return RedirectToAction("Index", "Home");
                 }
                 catch (Exception)

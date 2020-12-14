@@ -1,34 +1,23 @@
-﻿using FormManagement.BL.RepositoryClass;
-using FormManagement.DAL.EntityFramework;
+﻿using FormManagement.DAL;
+using FormManagement.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using User = FormManagement.DAL.EntityFramework.User;
 
 namespace FormManagement.Controllers
 {
     public class LoginController : Controller
     {
-        private ILoginRepository _loginRepo;
-
-        public LoginController()
-        {
-            _loginRepo = new LoginRepository(new FormManagementEntities());
-        }
-        public LoginController(ILoginRepository loginRepository)
-        {
-            _loginRepo = loginRepository;
-        }
-
+        UnitOfWork uofwork = new UnitOfWork(new FormManagementEntities());
         // GET: giris
         [HttpGet]
         [Route("giris")]
         public ActionResult Login()
         {
-            return View(_loginRepo.user());
+            return View(new User());
         }
 
         // GET: kayitol
@@ -36,7 +25,7 @@ namespace FormManagement.Controllers
         [Route("kayitol")]
         public ActionResult Kaydol()
         {
-            return View(_loginRepo.user());
+            return View(new User());
         }
 
         //POST:kayitol
@@ -48,8 +37,8 @@ namespace FormManagement.Controllers
             if (ModelState.IsValid)
             {
                 //Kayıtlı kullanıcı sorgusu
-                var hasUsername = _loginRepo.GetUsername(u.username);
-                if (hasUsername!=null)
+                var hasUsername = uofwork.LoginRepository.GetUser(u.username);
+                if (hasUsername != null)
                 {
                     ViewBag.Mesaj = "Kayıtlı kullanıcı adı zaten mevcuttur.Lütfen başka bir ad deneyiniz.";
                     u.password = null;
@@ -59,8 +48,9 @@ namespace FormManagement.Controllers
                 try
                 {
                     u.role = "user";
-                    _loginRepo.Add(u);
-                    ViewBag.Mesaj= "Kayıt işleminiz gerçekleşmiştir.";
+                    uofwork.LoginRepository.Add(u);
+                    uofwork.CompleteSave();
+                    ViewBag.Mesaj = "Kayıt işleminiz gerçekleşmiştir.";
                     return View(new User());
                 }
                 catch (Exception)
@@ -79,7 +69,7 @@ namespace FormManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _loginRepo.LoginWithPassword(u.username, u.password);
+                var user = uofwork.LoginRepository.GetUserWithPassword(u.username, u.password);
                 //Kullanıcı mevcut ise oturum açılır
                 if (user != null)
                 {
